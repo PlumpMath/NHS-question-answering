@@ -76,6 +76,7 @@ public class NhsScraper {
         // We may sometimes have a java.net.SocketTimeoutException here,
         // in this case a simple retrying helps.
         Document doc = Jsoup.connect(fullUrl).followRedirects(true).ignoreHttpErrors(true).get();
+
         JSONObject res = new JSONObject();
         res.put("URL", fullUrl);
         res.put("Title", doc.select("h1").first().text().replace("\u00a0",""));
@@ -83,11 +84,13 @@ public class NhsScraper {
         // NOTE: We reuse the scrapeSubSections() method both for the introductory page
         //       of each condition and for the pages describing symptoms / treatment / etc.
         res.put("Introduction", this.scrapeSubSections(conditionPageUrl));
+
         Elements furtherSections = doc.select("#ctl00_PlaceHolderMain_articles a");
         for (Element section : furtherSections) {
             String sectionName = section.ownText();  // use ownText() to skip hidden span tags
             res.put(sectionName, scrapeSubSections(section.attr("href")));
         }
+
         return res;
     }
     
@@ -103,9 +106,12 @@ public class NhsScraper {
     private JSONObject scrapeSubSections(String pageUrl) throws IOException {
         String fullUrl = "http://" + this.getBaseUrl() + pageUrl;
         Document doc = Jsoup.connect(fullUrl).followRedirects(true).get();
+
         Element content = doc.select(".main-content").first();
-        JSONObject subSections = new JSONObject();
         Elements textElements = content.select("h3, p, ul");
+
+        // Headers / texts are alternating in the HTML, so we should take care of that.
+        JSONObject subSections = new JSONObject();
         String currentSection = content.select("h2").first().text().replace("\u00a0","");
         StringBuilder currentText = new StringBuilder();
         for (Element textElement : textElements) {
