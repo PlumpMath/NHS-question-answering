@@ -64,6 +64,7 @@ public class QuestionAnswerer {
      * @param query Healthcare-related query in English, e.g. "What are the symptoms of cancer?".
      * @return JSONObject containing the URL of the corresponding NHS page as well as
      *         fields corresponding to the various aspects of the reply to the query.
+     *         If the search was unsuccessul, null will be returned.
      */
     public JSONObject answer(String query) {
         // Query preprocessing (tokenization, stopwords filtering, stemming)
