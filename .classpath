@@ -4,5 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="/media/storage/Users/MSDubov/Work/Job Applications/Babylon Health/Software Engineer - Data &amp; Semantic (2016)/NHS coding task/NHS-question-answering/lib/jsoup-1.9.2.jar"/>
 	<classpathentry kind="lib" path="/media/storage/Users/MSDubov/Work/Job Applications/Babylon Health/Software Engineer - Data &amp; Semantic (2016)/NHS coding task/NHS-question-answering/lib/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/media/storage/Users/MSDubov/Work/Job Applications/Babylon Health/Software Engineer - Data &amp; Semantic (2016)/NHS coding task/NHS-question-answering/lib/stanford-corenlp.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
