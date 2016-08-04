@@ -15,7 +15,7 @@ public class QuestionAnswererTest {
         String[] testQueries = new String[] {
             "What are the symptoms of cancer?",
             "What are the symptoms of oesophageal cancer?",
-            "treatments for headaches"
+            "treatments for allergy"
         };
         // NOTE: jsonviewer.stack.hu is a nice resource to visualize the result
         for (String query : testQueries) {

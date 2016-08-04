@@ -43,7 +43,7 @@ public class NhsScraper {
         JSONObject res = new JSONObject();
         
         // We use the index to get as many conditions as possible
-        for (char c = 'A'; c <= 'C'; c++) {
+        for (char c = 'A'; c <= 'Z'; c++) {
         	// TODO: We could also use the link formatting on these pages
         	//       to infer some structure (e.g. various types of cancer
         	//       may be grouped togerther somehow).

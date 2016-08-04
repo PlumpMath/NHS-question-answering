@@ -144,7 +144,9 @@ public class QuestionAnswerer {
         JSONObject jsonData = (JSONObject) data;
         int maxWords = 0;
         JSONObject bestSubtree = null;
-        // Sort keys by length to start with simplest possible things
+        // Sort keys by length to start with simplest possible things.
+        // This is important e.g. not to go to "oesophageal cancer" when
+        // the query is just about cancer in general.
         List<String> keysSortedByLength = new ArrayList<String>();
         for (Object key : jsonData.keySet()) {
         	keysSortedByLength.add((String) key);
