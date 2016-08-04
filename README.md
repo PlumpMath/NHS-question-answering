@@ -1,5 +1,5 @@
 # NHS-question-answering
-Simple question answering sysmem based on data scraped from http://www.nhs.uk/
+Simple question answering system based on data scraped from http://www.nhs.uk/
 
 
 ## Requirements
