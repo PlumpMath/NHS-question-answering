@@ -165,8 +165,13 @@ public class QuestionAnswerer {
         	//       "best-matching" subtrees anyway.
             return search(bestSubtree, keywords, depth + 1);
         } else {
-	        // The search is unsuccessful, return null in this case.
-	        return null;
+	        // The search is unsuccessful, return either null or the subtree,
+        	// based on the current depth.
+        	if (depth == 0) {
+        		return null;
+        	} else {
+        		return data;
+        	}
         }
     }
     
